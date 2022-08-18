@@ -41,7 +41,14 @@ public class UserRegistration {
 		else
 			System.out.println("Entered Mobile Number is invalid.Please check it! ");
 
-		
+		// validating Password
+		System.out.println("Enter your Password, it shuld have minimum 8 characters  :");
+		String pwd = input.next();
+		if (passwordRule_1(pwd))
+			System.out.println("Entered Password is : " + pwd);
+		else
+			System.out.println("Entered Password is invalid.Please check it! ");
+
 	}
 
 	// validate first name
@@ -61,8 +68,12 @@ public class UserRegistration {
 
 	// validate Email
 	public static boolean mobileNumber(String mob_Num) {
-		return mob_Num.matches("[0-9]{2}(\s)+[0-9]{10}$");
+		return mob_Num.matches("[0-9]{2}( )[0-9]{10}$");
 	}
 
-	
+	// validate Email
+	public static boolean passwordRule_1(String pwd) {
+		return pwd.matches("[a-z]{8,}+$");
+	}
+
 }
