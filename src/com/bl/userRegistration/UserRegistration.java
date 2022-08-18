@@ -49,6 +49,15 @@ public class UserRegistration {
 		else
 			System.out.println("Entered Password is invalid.Please check it! ");
 
+		// testing email samples
+		System.out.println(
+				"Enter your Password, it shuld have minimum 8 characters , one uppercase, one numeric and one special character :");
+		String email = input.next();
+		if (testEmailSamples(email))
+			System.out.println("Entered email is : " + email);
+		else
+			System.out.println("Entered email sample is invalid.Please check it! ");
+
 	}
 
 	// validate first name
@@ -74,6 +83,11 @@ public class UserRegistration {
 	// validate Email
 	public static boolean passwordRule_4(String pwd) {
 		return pwd.matches("[A-Z]{1}[a-z]{8,}+[0-9]{1}(?=.*[!@#&()–[{}]:;',?/*~$^+=<>]).$");
+	}
+
+	// test sample Emails
+	public static boolean testEmailSamples(String email) {
+		return email.matches("[abc+](?=.*[!@#&()–[{}]:;',?/*~$^+=<>]).[a-z](.+)[com+]$");
 	}
 
 }
