@@ -44,7 +44,7 @@ public class UserRegistration {
 		// validating Password
 		System.out.println("Enter your Password, it shuld have minimum 8 characters  :");
 		String pwd = input.next();
-		if (passwordRule_1(pwd))
+		if (passwordRule_2(pwd))
 			System.out.println("Entered Password is : " + pwd);
 		else
 			System.out.println("Entered Password is invalid.Please check it! ");
@@ -72,8 +72,8 @@ public class UserRegistration {
 	}
 
 	// validate Email
-	public static boolean passwordRule_1(String pwd) {
-		return pwd.matches("[a-z]{8,}+$");
+	public static boolean passwordRule_2(String pwd) {
+		return pwd.matches("[A-Z]{1}[a-z]{8,}+$");
 	}
 
 }
