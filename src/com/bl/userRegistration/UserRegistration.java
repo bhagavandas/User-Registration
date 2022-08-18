@@ -35,6 +35,8 @@ public class UserRegistration {
 
 	// validate last name
 	public static boolean lastName(String last_Name) {
-		return last_Name.matches("[A-Z][a-z]*");
+		return last_Name.matches("[A-Z]{1}[a-z]{3,}+$");
 	}
+	
+	
 }
