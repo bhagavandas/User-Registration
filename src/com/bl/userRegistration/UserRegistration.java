@@ -33,6 +33,15 @@ public class UserRegistration {
 		else
 			System.out.println("Entered Last Name is invalid.Please check it! ");
 
+		// validating email - abc.xyz@bl.co.in
+		System.out.println("Enter your mobile number  :");
+		String mob_Num = input.next();
+		if (mobileNumber(mob_Num))
+			System.out.println("Mobile Number is : " + mob_Num);
+		else
+			System.out.println("Entered Mobile Number is invalid.Please check it! ");
+
+		
 	}
 
 	// validate first name
@@ -47,6 +56,13 @@ public class UserRegistration {
 
 	// validate Email
 	public static boolean email(String valid_Email) {
-		return valid_Email.matches("[abc+](.+)?[a-z](@)?[bl+]{2}(.+)[co+]{2}(.+)[a-z]{2}$");
+		return valid_Email.matches("[abc+](.+)?[a-z](@)?[bl+](.+)[co+](.+)[a-z]{2}$");
 	}
+
+	// validate Email
+	public static boolean mobileNumber(String mob_Num) {
+		return mob_Num.matches("[0-9]{2}(\s)+[0-9]{10}$");
+	}
+
+	
 }
