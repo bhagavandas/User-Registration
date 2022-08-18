@@ -8,7 +8,7 @@ public class UserRegistration {
 	public static void main(String[] args) {
 		System.out.println("Welcome to User Registration Program!");
 		Scanner input = new Scanner(System.in);
-		
+
 		// validating First name
 		System.out.println("Enter your First Name should have one Caps and 3 minimum characters :");
 		String firstName = input.next();
@@ -16,15 +16,22 @@ public class UserRegistration {
 			System.out.println("First Name is : " + firstName);
 		else
 			System.out.println("Entered First Name is invalid.Please check it! ");
-		
-		//validating last name
+
+		// validating last name
 		System.out.println("Enter your Last Name should have one Caps and 3 minimum characters :");
 		String last_Name = input.next();
 		if (lastName(last_Name))
 			System.out.println("Last Name is : " + last_Name);
 		else
 			System.out.println("Entered Last Name is invalid.Please check it! ");
-		
+
+		// validating email - abc.xyz@bl.co.in
+		System.out.println("Enter your Email should has 3 mandatory parts(abc,bl & co) & 2 optional (xyz and in) :");
+		String valid_Email = input.next();
+		if (email(valid_Email))
+			System.out.println("Last Name is : " + valid_Email);
+		else
+			System.out.println("Entered Last Name is invalid.Please check it! ");
 
 	}
 
@@ -37,6 +44,9 @@ public class UserRegistration {
 	public static boolean lastName(String last_Name) {
 		return last_Name.matches("[A-Z]{1}[a-z]{3,}+$");
 	}
-	
-	
+
+	// validate Email
+	public static boolean email(String valid_Email) {
+		return valid_Email.matches("[abc+](.+)?[a-z](@)?[bl+]{2}(.+)[co+]{2}(.+)[a-z]{2}$");
+	}
 }
